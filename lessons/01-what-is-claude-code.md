@@ -29,16 +29,46 @@ Você não precisa aprender sintaxe especial — só digitar naturalmente já fu
 - `/clear` — limpa o contexto e começa uma conversa nova
 - `/exit` ou `Ctrl+C` — sai do Claude Code
 
+## Permissões
+
+Porque o Claude Code tem acesso real ao seu computador, ele **pede permissão antes de agir**. Isso é uma proteção — ele não faz nada às escondidas.
+
+Quando você vê uma mensagem assim no terminal:
+
+```
+Do you want to proceed?
+1. Yes, for this session
+2. Yes, always
+3. No
+```
+
+Isso é o Claude pedindo sua autorização. Veja o que cada opção faz:
+
+- **1 — Aceitar uma vez**: ele faz aquela ação agora, mas vai perguntar de novo na próxima
+- **2 — Aceitar sempre**: ele nunca mais pergunta para esse tipo de ação na sessão atual
+- **3 — Rejeitar**: ele não faz nada e aguarda outra instrução
+
+**Dica prática:** Para ações comuns como ler e criar arquivos, pode apertar **2** sem medo. É seguro e evita interrupções a cada passo.
+
 ## Exercício
 
-Peça ao Claude Code para criar um arquivo chamado `ola.txt` com o conteúdo "Minha primeira vez com Claude Code!" e depois peça para ele ler o arquivo de volta para você.
+Agora vem a parte mais legal — você vai ver o Claude Code agir no mundo real. Peça para ele criar um arquivo com uma mensagem criativa e depois **abrir esse arquivo no seu computador**.
+
+Não é só texto no terminal: o arquivo vai aparecer na sua tela, aberto pelo sistema, como se você tivesse clicado duas vezes nele.
 
 **Sugestão de prompt:**
-> "Cria um arquivo chamado ola.txt com o texto: Minha primeira vez com Claude Code! Depois lê ele pra mim."
+> "Cria um arquivo chamado ola.txt com uma mensagem de boas-vindas criativa, e depois abre ele no meu computador pra eu ver"
+
+O Claude vai criar o arquivo e usar o comando certo para o seu sistema operacional:
+- No **Linux ou WSL**: `xdg-open ola.txt`
+- No **macOS**: `open ola.txt`
+
+Quando o arquivo aparecer aberto na sua tela, esse é o momento "uau" — a IA criou algo no seu computador e abriu pra você ver, tudo a partir de uma frase em português.
 
 ## Critérios de Validação
 
 Você concluiu esta lição quando:
 - [ ] O arquivo `ola.txt` foi criado com sucesso
-- [ ] O conteúdo foi lido de volta no terminal
+- [ ] O arquivo abriu automaticamente no seu computador
 - [ ] Você entendeu a diferença entre Claude Code e Claude.ai
+- [ ] Você sabe o que fazer quando o Claude pede permissão

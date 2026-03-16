@@ -10,9 +10,12 @@ Briefly explain (2-3 sentences max):
 - What Claude Code is: an AI coding assistant that runs in the terminal and can read, write, and run code
 - What this project does: teaches Claude Code through hands-on lessons, then transforms itself into the user's personal workspace
 
-Ask the user two things:
-1. Their name and a bit about themselves (student? developer? what do they work with?)
-2. What they hope to get out of this (learn AI tools? automate tasks? build projects?)
+Then explain how Claude Code permissions work. Tell the user exactly this (adapting tone to be warm and natural):
+
+"Antes de começar, uma coisa importante: o Claude Code sempre pede sua **permissão** antes de fazer qualquer coisa no seu computador. Quando aparecer uma pergunta pedindo pra criar ou ler um arquivo, você tem 3 opções: apertar **1** (aceita só dessa vez), **2** (aceita sempre pra esse tipo de ação) ou **3** (recusa). Pode ficar tranquilo em apertar 2 pra ações comuns como ler e escrever arquivos — é seguro!"
+
+After the permissions explanation, ask the user ONE question:
+- Their name and what brought them here (student? developer? what do they work with? what do they hope to learn or build?)
 
 After asking, create the state file `.claude-mentor-state.json` with this structure:
 ```json
@@ -27,7 +30,7 @@ Leave name and goal empty for now — they'll be filled in once the user respond
 
 ## If the state file EXISTS:
 
-Read `.claude-mentor-state.json`.
+Read `.claude-mentor-state.json` ONCE at the start of the session. Keep all information from it in your context memory — do NOT re-read the file for subsequent messages in this session.
 
 Greet the user back by name (if available). Briefly acknowledge their progress — mention how many lessons they've completed out of 8.
 
