@@ -21,13 +21,21 @@ Um projeto open-source onde o Claude Code se transforma em mentor interativo: te
 
 ## Instalação
 
+Abra o terminal e cole o comando do seu sistema:
+
+**Linux / macOS:**
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.sh | bash
 ```
 
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | iex
+```
+
 **Único pré-requisito:** [conta Claude](https://claude.com/pricing) — novos usuários ganham **30 dias grátis** do Pro!
 
-> O instalador cuida de tudo automaticamente — curl, git e Claude Code.
+> O instalador cuida de tudo automaticamente — git e Claude Code.
 > Não precisa de Node.js, Python ou qualquer outra dependência.
 > Tudo 100% gratuito: Claude Code (trial), GitHub Pages (grátis), Git (grátis).
 
