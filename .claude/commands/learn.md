@@ -16,6 +16,7 @@ Display the full lesson menu with status icons. Unlock rules:
 6. Agentes — Sua equipe
 7. MCP — Conectando ao mundo
 8. Juntando tudo
+9. Construa e publique — Do zero ao seu site na internet
 
 After displaying the menu, say:
 
@@ -29,7 +30,9 @@ If unlocked or completed, load the lesson file from `lessons/`, named with zero-
 
 After the lesson content is delivered and any exercises are done, ask: "Você quer marcar essa lição como concluída?" If yes, update `.claude-mentor-state.json` — add the lesson number to `completedLessons` if not already there.
 
-Then suggest the next step: next available lesson or `/evolve` if lessons 1-2 are done.
+Then suggest the next step: next available lesson, `/build` as a shortcut for lesson 9, or `/evolve` if lessons 1-2 are done.
+
+**Note about lesson 9:** Lesson 9 is special — it's the practical track where the user builds a real project and deploys it. It can also be accessed directly via the `/build` command. It unlocks after lesson 2 (not after lesson 8), because the user only needs to understand Claude Code basics and CLAUDE.md to start building.
 
 ## If the user types FREE TEXT (not a number):
 
