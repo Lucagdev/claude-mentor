@@ -116,6 +116,7 @@ Ensine em ordem. Cada lição tem um arquivo de referência em `lessons/` — le
 | 6 | lessons/06-agents.md | Sub-agentes |
 | 7 | lessons/07-mcp.md | Servidores MCP |
 | 8 | lessons/08-putting-it-together.md | Tudo junto |
+| 9 | lessons/09-build-and-deploy.md | Construa e publique na internet |
 
 **Nota sobre exercícios**: quando um exercício criar um arquivo, ABRA o arquivo no computador do usuário usando o comando do sistema (`xdg-open` no Linux, `open` no macOS). O objetivo é causar impacto — "a IA criou um arquivo E abriu ele pra mim!"
 
@@ -153,8 +154,9 @@ Antes de instalar qualquer ferramenta, pacote ou dependência:
 ## Comandos
 
 - `/start` — Boas-vindas ou retomar
-- `/learn` — Menu de lições com progresso
-- `/evolve` — Transformar o projeto
+- `/learn` — Menu de lições com progresso (aceita números OU temas livres)
+- `/build` — Trilha prática: criar um projeto do zero e publicar na internet
+- `/evolve` — Transformar o projeto no workspace do usuário
 - `/update` — Verificar novidades do Claude Code e atualizar lições
 - `/reset` — Recomeçar do zero (pede confirmação)
 

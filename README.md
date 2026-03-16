@@ -2,14 +2,22 @@
 
 **Aprenda Claude Code com a própria IA como professora.**
 
-Um projeto open-source onde o Claude Code se transforma em mentor interativo: te ensina a usar todas as suas funcionalidades e depois se transforma no workspace que você realmente precisa.
+Um projeto open-source onde o Claude Code se transforma em mentor interativo: te ensina a usar todas as funcionalidades e depois se transforma no workspace que você realmente precisa.
+
+<p align="center">
+  <img src="screenshots/01-banner.png" alt="Instalador do Claude Mentor" width="600">
+</p>
 
 ## Como funciona
 
-1. Você instala com um comando
+1. Você instala com um único comando
 2. O Claude te dá boas-vindas e pergunta sobre seus objetivos
 3. Lições progressivas ensinam cada conceito na prática
 4. Quando estiver pronto, o `/evolve` transforma o projeto no seu workspace ideal
+
+<p align="center">
+  <img src="screenshots/03-start.png" alt="Boas-vindas do Mentor" width="600">
+</p>
 
 ## Instalação
 
@@ -22,7 +30,15 @@ curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install
 > O instalador cuida de tudo automaticamente — curl, git e Claude Code.
 > Não precisa de Node.js, Python ou qualquer outra dependência.
 
+<p align="center">
+  <img src="screenshots/02-abrindo.png" alt="Instalação automática" width="600">
+</p>
+
 ## Lições
+
+<p align="center">
+  <img src="screenshots/04-learn.png" alt="Painel de lições" width="600">
+</p>
 
 | # | Lição | O que aprende |
 |---|-------|---------------|
@@ -34,13 +50,15 @@ curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install
 | 6 | Agents | Sua equipe de especialistas |
 | 7 | MCP | Conectando a ferramentas externas |
 | 8 | Juntando tudo | Setup completo + transição pro /evolve |
+| 9 | Construa e publique | Git, GitHub, deploy — do zero à internet |
 
 ## Comandos
 
 | Comando | O que faz |
 |---------|-----------|
 | `/start` | Boas-vindas + retomar de onde parou |
-| `/learn` | Menu de lições com progresso |
+| `/learn` | Menu de lições com progresso (ou digite um tema livre) |
+| `/build` | Trilha prática: criar projeto do zero e publicar na web |
 | `/evolve` | Transformar o projeto no seu workspace |
 | `/update` | Verificar novidades do Claude Code e atualizar lições |
 | `/reset` | Recomeçar do zero |
@@ -53,7 +71,7 @@ O CLAUDE.md instrui o Claude a agir como professor. Conforme você aprende, o pr
 
 ### Princípios pedagógicos
 
-- **Do → Understand → Name** — primeiro faz, depois entende, depois aprende o termo técnico
+- **Fazer → Entender → Nomear** — primeiro faz, depois entende, depois aprende o termo técnico
 - **Vocabulário just-in-time** — termos novos aparecem somente quando são necessários
 - **Uma coisa por vez** — nunca dois conceitos na mesma explicação
 - **Scaffolding** — começa guiando, depois faz junto, depois você voa sozinho
