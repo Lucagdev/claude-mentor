@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Mentor — Aprenda a programar com IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    .hero {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: #999;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .step-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #06b6d4;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .terminal-instruction {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .terminal-instruction .os-name {
+      font-size: 0.8rem;
+      color: #06b6d4;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .open-hint {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      background: rgba(6, 182, 212, 0.08);
+      border-radius: 8px;
+      border-left: 3px solid #06b6d4;
+    }
+
+    .command-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .command-text {
+      flex: 1;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #06b6d4;
+      word-break: break-all;
+      user-select: all;
+      cursor: text;
+    }
+
+    .copy-btn {
+      background: #06b6d4;
+      color: #0a0a0a;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .copy-btn:hover { background: #22d3ee; transform: scale(1.02); }
+    .copy-btn.copied { background: #22c55e; }
+
+    .other-os {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .other-os a {
+      color: #8b5cf6;
+      text-decoration: none;
+    }
+
+    .other-os a:hover { text-decoration: underline; }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 40px 0;
+      text-align: left;
+    }
+
+    .feature {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .feature-icon { font-size: 1.4rem; margin-bottom: 6px; }
+
+    .feature-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .feature-desc {
+      font-size: 0.8rem;
+      color: #777;
+      line-height: 1.4;
+    }
+
+    .free-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .author {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #222;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .author a {
+      color: #8b5cf6;
+      text-decoration: none;
+    }
+
+    .author a:hover { text-decoration: underline; }
+
+    .all-commands { display: none; }
+    .all-commands.show { display: block; }
+
+    .all-commands .terminal-instruction { margin-top: 12px; }
+
+    .toggle-all {
+      background: none;
+      border: 1px solid #333;
+      color: #888;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-top: 8px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .toggle-all:hover { border-color: #555; color: #ccc; }
+
+    @media (max-width: 480px) {
+      .logo { font-size: 2.2rem; }
+      .hero { font-size: 1.3rem; }
+      .features { grid-template-columns: 1fr; }
+      .command-text { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Claude Mentor</div>
+    <div class="subtitle">por Lucas Duarte</div>
+
+    <div class="free-badge">100% gratuito</div>
+
+    <div class="hero">Aprenda a programar com IA.<br>Do zero ao seu primeiro site na internet.</div>
+    <div class="hero-desc">
+      Uma IA que te ensina a usar ela mesma. Sem saber nada de programação,
+      você vai ter um site publicado na internet pra mostrar pros amigos.
+    </div>
+
+    <div class="step-label">Passo 1 — Abra o terminal</div>
+    <div id="open-hint" class="open-hint"></div>
+
+    <div class="step-label" style="margin-top: 20px;">Passo 2 — Cole este comando</div>
+    <div id="main-command" class="terminal-instruction">
+      <div class="os-name"><span id="os-icon"></span> <span id="os-label"></span></div>
+      <div class="command-box">
+        <code class="command-text" id="command-text"></code>
+        <button class="copy-btn" id="copy-btn" onclick="copyCommand()">Copiar</button>
+      </div>
+    </div>
+
+    <div class="step-label" style="margin-top: 20px;">Passo 3 — Aperte Enter e siga a IA</div>
+
+    <button class="toggle-all" onclick="toggleAll()">Usa outro sistema? Clique aqui</button>
+
+    <div class="all-commands" id="all-commands">
+      <div class="terminal-instruction">
+        <div class="os-name">🐧 Linux / 🍎 macOS</div>
+        <div class="command-box">
+          <code class="command-text">curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.sh | bash</code>
+          <button class="copy-btn" onclick="copyText(this, 'curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.sh | bash')">Copiar</button>
+        </div>
+      </div>
+      <div class="terminal-instruction">
+        <div class="os-name">🪟 Windows (PowerShell)</div>
+        <div class="command-box">
+          <code class="command-text">irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | iex</code>
+          <button class="copy-btn" onclick="copyText(this, 'irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | iex')">Copiar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🎓</div>
+        <div class="feature-title">IA como professora</div>
+        <div class="feature-desc">O Claude Code te ensina passo a passo, em português</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <div class="feature-title">Do zero ao deploy</div>
+        <div class="feature-desc">Sai sem saber nada e termina com um site no ar</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">Tudo gratuito</div>
+        <div class="feature-desc">30 dias grátis do Claude + GitHub Pages grátis</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔧</div>
+        <div class="feature-title">Zero configuração</div>
+        <div class="feature-desc">O instalador configura tudo no seu PC automaticamente</div>
+      </div>
+    </div>
+
+    <div class="author">
+      <strong>Lucas Duarte</strong><br>
+      <a href="https://www.threads.com/@lucasgduartee">Threads</a> ·
+      <a href="https://github.com/Lucagdev">GitHub</a> ·
+      <a href="https://youtube.com/@lucasgdev">YouTube</a>
+      <br><br>
+      <a href="https://github.com/Lucagdev/claude-mentor">⭐ Dá uma estrela no GitHub</a>
+    </div>
+  </div>
+
+  <script>
+    function detectOS() {
+      const ua = navigator.userAgent.toLowerCase();
+      const platform = navigator.platform.toLowerCase();
+
+      if (ua.includes('win')) return 'windows';
+      if (ua.includes('mac') || platform.includes('mac')) return 'macos';
+      if (ua.includes('linux') || ua.includes('x11')) return 'linux';
+      if (ua.includes('android')) return 'android';
+      if (ua.includes('iphone') || ua.includes('ipad')) return 'ios';
+      return 'linux';
+    }
+
+    const os = detectOS();
+    const commands = {
+      windows: 'irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | iex',
+      macos: 'curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.sh | bash',
+      linux: 'curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.sh | bash',
+    };
+
+    const labels = {
+      windows: '🪟 Windows (PowerShell)',
+      macos: '🍎 macOS (Terminal)',
+      linux: '🐧 Linux (Terminal)',
+    };
+
+    const hints = {
+      windows: '💡 Aperte <strong>Win + X</strong> e clique em <strong>"Terminal"</strong> ou <strong>"PowerShell"</strong>',
+      macos: '💡 Aperte <strong>Cmd + Espaço</strong>, digite <strong>"Terminal"</strong> e aperte Enter',
+      linux: '💡 Aperte <strong>Ctrl + Alt + T</strong> pra abrir o terminal',
+    };
+
+    const resolved = (os === 'android' || os === 'ios') ? 'linux' : os;
+
+    document.getElementById('os-label').textContent = labels[resolved].replace(/[🪟🍎🐧] /, '');
+    document.getElementById('os-icon').textContent = labels[resolved].charAt(0);
+    document.getElementById('command-text').textContent = commands[resolved];
+    document.getElementById('open-hint').innerHTML = hints[resolved] ||
+      '💡 Abra o terminal do seu computador';
+
+    if (os === 'android' || os === 'ios') {
+      document.getElementById('open-hint').innerHTML =
+        '📱 Você está no celular! Salve este link e abra no computador pra instalar.';
+    }
+
+    function copyCommand() {
+      const btn = document.getElementById('copy-btn');
+      navigator.clipboard.writeText(commands[resolved]).then(() => {
+        btn.textContent = 'Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copiar';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    function copyText(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copiar';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    function toggleAll() {
+      document.getElementById('all-commands').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
