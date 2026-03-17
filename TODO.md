@@ -2,13 +2,14 @@
 
 ## Bugs / Ajustes Urgentes
 
-- [ ] **JSON sendo lido toda vez**: o Claude lê `.claude-mentor-state.json` a cada interação mesmo já estando no contexto. Instruir no CLAUDE.md pra ler só no início da sessão ou quando um comando explicitamente pedir
-- [ ] **Explicar permissões do Claude Code**: na lição 1 ou no /start, ensinar que o Claude Code pede permissão pra agir (ler, escrever, executar) e que: `1` = aceita uma vez, `2` = aceita sempre aquele tipo de ação. Isso é fundamental pro leigo não travar na primeira interação
-- [ ] **Exercício da lição 1 precisa de "UAU"**: em vez de "ler o arquivo de volta", abrir o arquivo no PC do usuário com `xdg-open` (Linux), `open` (macOS) ou `code` (VS Code). Primeira impressão tem que ser impactante — "a IA criou um arquivo E abriu ele pra mim!"
+- [x] **JSON sendo lido toda vez**: instruído no CLAUDE.md pra ler só no início da sessão
+- [x] **Explicar permissões do Claude Code**: adicionado no fluxo do /start (apertar 1, 2, 3)
+- [x] **Exercício da lição 1 precisa de "UAU"**: implementado com xdg-open/open
+- [x] **Acentos na landing page**: corrigidos todos os acentos em docs/index.html
 
 ## Melhorias de UX
 
-- [ ] **Lição 0 implícita**: antes da lição 1, o /start deveria explicar brevemente como funciona a interação (digitar texto, apertar Enter, aceitar permissões). Muita gente nunca viu um terminal
+- [x] **Lição 0 implícita**: coberta pelo fluxo do /start (permissões + interação)
 - [ ] **Progresso visual mais rico**: mostrar barra de progresso, não só "1/8"
 - [ ] **Dicas contextuais**: quando o Claude faz uma ação (Write, Read), explicar o que aquele "badge" significa na primeira vez que aparece
 - [ ] **Rate limit**: adicionar detecção/explicação quando o usuário bater no limite
@@ -21,7 +22,7 @@
 
 ## Infraestrutura
 
-- [ ] **CONTRIBUTING.md**: guia pra contribuidores
+- [x] **CONTRIBUTING.md**: guia pra contribuidores
 - [ ] **GitHub Issues como backlog**: migrar esses TODOs pra issues
 - [ ] **CI**: validar que os .md files têm acentuação correta
-- [ ] **Screenshots no README**: adicionar após validação do fluxo
+- [ ] **Screenshots no README**: removidas img tags quebradas, adicionar quando tiver screenshots reais

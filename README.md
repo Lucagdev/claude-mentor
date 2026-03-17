@@ -4,20 +4,12 @@
 
 Um projeto open-source onde o Claude Code se transforma em mentor interativo: te ensina a usar todas as funcionalidades e depois se transforma no workspace que você realmente precisa.
 
-<p align="center">
-  <img src="screenshots/01-banner.png" alt="Instalador do Claude Mentor" width="600">
-</p>
-
 ## Como funciona
 
 1. Você instala com um único comando
 2. O Claude te dá boas-vindas e pergunta sobre seus objetivos
 3. Lições progressivas ensinam cada conceito na prática
 4. Quando estiver pronto, o `/evolve` transforma o projeto no seu workspace ideal
-
-<p align="center">
-  <img src="screenshots/03-start.png" alt="Boas-vindas do Mentor" width="600">
-</p>
 
 ## Instalação
 
@@ -39,15 +31,7 @@ irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | 
 > Não precisa de Node.js, Python ou qualquer outra dependência.
 > Tudo 100% gratuito: Claude Code (trial), GitHub Pages (grátis), Git (grátis).
 
-<p align="center">
-  <img src="screenshots/02-abrindo.png" alt="Instalação automática" width="600">
-</p>
-
 ## Lições
-
-<p align="center">
-  <img src="screenshots/04-learn.png" alt="Painel de lições" width="600">
-</p>
 
 | # | Lição | O que aprende |
 |---|-------|---------------|
