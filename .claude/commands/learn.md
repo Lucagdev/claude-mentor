@@ -1,6 +1,6 @@
 IMPORTANT: Always use proper Portuguese (Brasil) accents in all responses (é, ã, ç, ô, etc.). Never write "voce", "nao", "ja" — always "você", "não", "já".
 
-Read `.claude-mentor-state.json` to get the list of completed lessons. If the file doesn't exist, treat `completedLessons` as an empty array and suggest the user run `/start` first.
+Read `.claude-code-iniciantes-state.json` to get the list of completed lessons. If the file doesn't exist, treat `completedLessons` as an empty array and suggest the user run `/start` first.
 
 Display the full lesson menu with status icons. Unlock rules:
 - Lesson 1 is always available (🔓 or ✅)
@@ -28,7 +28,7 @@ Check if it's unlocked. If locked, explain they need to complete the previous le
 
 If unlocked or completed, load the lesson file from `lessons/`, named with zero-padded numbers (e.g., `lessons/01-what-is-claude-code.md`, `lessons/02-claude-md.md`, etc.). Read the corresponding file and follow its content to teach the lesson interactively.
 
-After the lesson content is delivered and any exercises are done, ask: "Você quer marcar essa lição como concluída?" If yes, update `.claude-mentor-state.json` — add the lesson number to `completedLessons` if not already there.
+After the lesson content is delivered and any exercises are done, ask: "Você quer marcar essa lição como concluída?" If yes, update `.claude-code-iniciantes-state.json` — add the lesson number to `completedLessons` if not already there.
 
 Then suggest the next step: next available lesson, `/build` as a shortcut for lesson 9, or `/evolve` if lessons 1-2 are done.
 

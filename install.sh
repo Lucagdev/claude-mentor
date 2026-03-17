@@ -45,7 +45,7 @@ echo -e "  ${DIM}GitHub:  ${AMBER}github.com/Lucagdev${RESET}"
 echo -e "  ${DIM}YouTube: ${AMBER}youtube.com/@lucasgdev${RESET}"
 echo -e "  ${DIM}────────────────────────────────────────────────────${RESET}"
 br
-echo -e "  ${BOLD}Olá! Bem-vindo ao instalador do Claude Mentor.${RESET}"
+echo -e "  ${BOLD}Olá! Bem-vindo ao instalador do Claude Code para Iniciantes.${RESET}"
 br
 echo -e "  Eu sou um script que vai preparar tudo no seu computador"
 echo -e "  pra você começar a aprender programação com inteligência artificial."
@@ -105,7 +105,7 @@ case "$OS" in
   *)
     fail "Não consegui identificar seu sistema."
     br
-    echo -e "  O Claude Mentor funciona em Linux, macOS e Windows (com WSL)."
+    echo -e "  O Claude Code para Iniciantes funciona em Linux, macOS e Windows (com WSL)."
     br
     echo -e "  ${BOLD}Se você usa Windows sem WSL:${RESET}"
     echo -e "  Abra o PowerShell como Administrador e digite:"
@@ -206,7 +206,7 @@ else
   tip "como um 'ctrl+z' infinito que nunca esquece nada."
   br
   tip "Quase todo código do mundo é guardado com git."
-  tip "Precisamos dele pra baixar os arquivos do Claude Mentor."
+  tip "Precisamos dele pra baixar os arquivos do Claude Code para Iniciantes."
   br
   vocab "git = sistema de controle de versão."
   tip "Versionar = salvar cada alteração, podendo voltar atrás a qualquer momento."
@@ -305,7 +305,7 @@ pause
 # ─── Clone project ────────────────────────────────────────────────────────────
 echo -e "  ${AMBER}${BOLD}── Passo 4 de 4: Baixando o projeto ──${RESET}"
 br
-echo -e "  Agora vou baixar os arquivos do Claude Mentor pro seu computador."
+echo -e "  Agora vou baixar os arquivos do Claude Code para Iniciantes pro seu computador."
 br
 echo -e "  ${BOLD}O que são esses arquivos?${RESET}"
 tip "São as instruções que transformam o Claude Code em professor."
@@ -313,7 +313,7 @@ tip "Sem eles, o Claude Code é apenas uma IA genérica."
 tip "Com eles, ele sabe te ensinar passo a passo."
 br
 
-DEFAULT_DIR="$HOME/claude-mentor"
+DEFAULT_DIR="$HOME/claude-code-iniciantes"
 echo -e "  Por padrão, vou salvar os arquivos aqui:"
 echo -e "    ${AMBER}${BOLD}$DEFAULT_DIR${RESET}"
 br
@@ -333,7 +333,7 @@ else
 fi
 
 br
-REPO_URL="https://github.com/Lucagdev/claude-mentor.git"
+REPO_URL="https://github.com/Lucagdev/claude-code-iniciantes.git"
 
 if [[ -d "$TARGET_DIR/.git" ]]; then
   ok "O projeto já está instalado nessa pasta."
@@ -386,7 +386,7 @@ echo -e "  ${DIM}  Ctrl+C  = também sai, a qualquer momento${RESET}"
 br
 
 echo -e "  ${DIM}─────────────────────────────────────────────────────${RESET}"
-echo -e "  ${DIM}Claude Mentor · por Lucas Duarte${RESET}"
+echo -e "  ${DIM}Claude Code para Iniciantes · por Lucas Duarte${RESET}"
 echo -e "  ${DIM}Threads: threads.com/@lucasgduartee${RESET}"
 echo -e "  ${DIM}GitHub:  github.com/Lucagdev${RESET}"
 echo -e "  ${DIM}YouTube: @lucasgdev${RESET}"

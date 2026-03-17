@@ -1,5 +1,5 @@
-# Claude Mentor — Instalador para Windows
-# Execute com: irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | iex
+# Claude Code para Iniciantes — Instalador para Windows
+# Execute com: irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1 | iex
 
 $ErrorActionPreference = "Stop"
 
@@ -34,7 +34,7 @@ Write-Tip "GitHub:  github.com/Lucagdev"
 Write-Tip "YouTube: youtube.com/@lucasgdev"
 Write-Host "  ────────────────────────────────────────────────────"
 Write-Host ""
-Write-Color "  Olá! Bem-vindo ao instalador do Claude Mentor." White
+Write-Color "  Olá! Bem-vindo ao instalador do Claude Code para Iniciantes." White
 Write-Host ""
 Write-Host "  Eu sou um script que vai preparar tudo no seu computador"
 Write-Host "  pra você começar a aprender programação com inteligência artificial."
@@ -162,7 +162,7 @@ Read-Host "     Aperte ENTER quando estiver pronto..."
 Write-Host ""
 Write-Color "  ── Passo 3 de 4: Baixando o projeto ──" Cyan
 Write-Host ""
-Write-Host "  Agora vou baixar os arquivos do Claude Mentor pro seu computador."
+Write-Host "  Agora vou baixar os arquivos do Claude Code para Iniciantes pro seu computador."
 Write-Host ""
 Write-Host "  O que são esses arquivos?" -ForegroundColor White
 Write-Tip "São as instruções que transformam o Claude Code em professor."
@@ -170,7 +170,7 @@ Write-Tip "Sem eles, o Claude Code é apenas uma IA genérica."
 Write-Tip "Com eles, ele sabe te ensinar passo a passo."
 Write-Host ""
 
-$DefaultDir = Join-Path $HOME "claude-mentor"
+$DefaultDir = Join-Path $HOME "claude-code-iniciantes"
 Write-Host "  Por padrão, vou salvar os arquivos aqui:"
 Write-Color "    $DefaultDir" Cyan
 Write-Host ""
@@ -182,7 +182,7 @@ if ($choice -eq '' -or $choice -match '^[sS]$') {
     $TargetDir = Read-Host "  Caminho"
 }
 
-$RepoUrl = "https://github.com/Lucagdev/claude-mentor.git"
+$RepoUrl = "https://github.com/Lucagdev/claude-code-iniciantes.git"
 
 if (Test-Path (Join-Path $TargetDir ".git")) {
     Write-Ok "O projeto já está instalado nessa pasta."
@@ -227,7 +227,7 @@ Write-Tip "  /exit   = sai do Claude Code"
 Write-Tip "  Ctrl+C  = também sai, a qualquer momento"
 Write-Host ""
 Write-Host "  ────────────────────────────────────────────────────" -ForegroundColor DarkGray
-Write-Host "  Claude Mentor · por Lucas Duarte" -ForegroundColor DarkGray
+Write-Host "  Claude Code para Iniciantes · por Lucas Duarte" -ForegroundColor DarkGray
 Write-Tip "Threads: threads.com/@lucasgduartee"
 Write-Tip "GitHub:  github.com/Lucagdev"
 Write-Tip "YouTube: youtube.com/@lucasgdev"

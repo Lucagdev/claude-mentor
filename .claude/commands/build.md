@@ -1,6 +1,6 @@
 IMPORTANT: Always use proper Portuguese (Brasil) accents in all responses (é, ã, ç, ô, etc.). Never write "voce", "nao", "ja" — always "você", "não", "já".
 
-Read `.claude-mentor-state.json` to check the user's progress.
+Read `.claude-code-iniciantes-state.json` to check the user's progress.
 
 ## If lessons 1 and 2 are NOT completed:
 
@@ -65,7 +65,7 @@ Use Google Fonts for typography, CSS gradients/shadows for visual appeal, and CS
 
 1. Open the live site in the user's browser automatically
 2. Say something like: "Seu site está ao vivo! Qualquer pessoa no mundo pode acessar esse link agora. Manda pra alguém e vê a reação!"
-3. Update `.claude-mentor-state.json` — add 9 to completedLessons
+3. Update `.claude-code-iniciantes-state.json` — add 9 to completedLessons
 4. Suggest next steps:
    - "Quer mudar alguma coisa? Cores, textos, fotos?"
    - "Quer adicionar mais páginas?"

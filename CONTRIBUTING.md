@@ -1,4 +1,4 @@
-# Contribuindo com o Claude Mentor
+# Contribuindo com o Claude Code para Iniciantes
 
 Obrigado por querer contribuir! Este projeto é feito pra ensinar iniciantes, então qualquer melhoria no conteúdo pedagógico é muito bem-vinda.
 
@@ -6,7 +6,7 @@ Obrigado por querer contribuir! Este projeto é feito pra ensinar iniciantes, en
 
 ### 1. Reportar problemas
 
-Achou algo confuso? O Claude respondeu de um jeito estranho? Abra uma [issue](https://github.com/Lucagdev/claude-mentor/issues) descrevendo:
+Achou algo confuso? O Claude respondeu de um jeito estranho? Abra uma [issue](https://github.com/Lucagdev/claude-code-iniciantes/issues) descrevendo:
 - O que você fez (qual comando/lição)
 - O que esperava acontecer
 - O que aconteceu de verdade
@@ -49,8 +49,8 @@ Tem uma ideia de workspace pré-configurado? (ex: blog, API, automação, market
 # 1. Fork o repositório no GitHub
 
 # 2. Clone seu fork
-git clone https://github.com/SEU_USUARIO/claude-mentor.git
-cd claude-mentor
+git clone https://github.com/SEU_USUARIO/claude-code-iniciantes.git
+cd claude-code-iniciantes
 
 # 3. Crie uma branch
 git checkout -b minha-melhoria

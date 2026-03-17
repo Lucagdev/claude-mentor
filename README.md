@@ -1,4 +1,4 @@
-# Claude Mentor
+# Claude Code para Iniciantes
 
 **Aprenda Claude Code com a própria IA como professora.**
 
@@ -17,12 +17,12 @@ Abra o terminal e cole o comando do seu sistema:
 
 **Linux / macOS:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1 | iex
 ```
 
 **Único pré-requisito:** [conta Claude](https://claude.com/pricing) — novos usuários ganham **30 dias grátis** do Pro!
@@ -58,7 +58,7 @@ irm https://raw.githubusercontent.com/Lucagdev/claude-mentor/main/install.ps1 | 
 
 ## O conceito
 
-A maioria dos starter kits te dá configs prontas. **Claude Mentor te ensina a pescar** — e depois monta a vara junto com você.
+A maioria dos starter kits te dá configs prontas. **Claude Code para Iniciantes te ensina a pescar** — e depois monta a vara junto com você.
 
 O CLAUDE.md instrui o Claude a agir como professor. Conforme você aprende, o próprio projeto vai se transformando: o CLAUDE.md perde as instruções de ensino e ganha as instruções do SEU projeto. Comandos, skills, hooks e agents são criados sob medida para o que você quer construir.
 

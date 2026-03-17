@@ -1,6 +1,6 @@
 IMPORTANT: Always use proper Portuguese (Brasil) accents in all responses (é, ã, ç, ô, etc.). Never write "voce", "nao", "ja" — always "você", "não", "já".
 
-Check if the file `.claude-mentor-state.json` exists in the current directory.
+Check if the file `.claude-code-iniciantes-state.json` exists in the current directory.
 
 ## If the state file does NOT exist (first time):
 
@@ -17,7 +17,7 @@ Then explain how Claude Code permissions work. Tell the user exactly this (adapt
 After the permissions explanation, ask the user ONE question:
 - Their name and what brought them here (student? developer? what do they work with? what do they hope to learn or build?)
 
-After asking, create the state file `.claude-mentor-state.json` with this structure:
+After asking, create the state file `.claude-code-iniciantes-state.json` with this structure:
 ```json
 {
   "name": "",
@@ -30,7 +30,7 @@ Leave name and goal empty for now — they'll be filled in once the user respond
 
 ## If the state file EXISTS:
 
-Read `.claude-mentor-state.json` ONCE at the start of the session. Keep all information from it in your context memory — do NOT re-read the file for subsequent messages in this session.
+Read `.claude-code-iniciantes-state.json` ONCE at the start of the session. Keep all information from it in your context memory — do NOT re-read the file for subsequent messages in this session.
 
 Greet the user back by name (if available). Briefly acknowledge their progress — mention how many lessons they've completed out of 8.
 

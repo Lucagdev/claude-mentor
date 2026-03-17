@@ -1,10 +1,10 @@
 IMPORTANT: Always use proper Portuguese (Brasil) accents in all responses (é, ã, ç, ô, etc.). Never write "voce", "nao", "ja" — always "você", "não", "já".
 
-You are performing a self-update check for Claude Mentor. Do the following:
+You are performing a self-update check for Claude Code para Iniciantes. Do the following:
 
 ## Step 1: Check for new project files
 
-Run `git pull` in the project directory to get the latest version of Claude Mentor from GitHub. If there are updates, summarize what changed in 2-3 lines for the user.
+Run `git pull` in the project directory to get the latest version of Claude Code para Iniciantes from GitHub. If there are updates, summarize what changed in 2-3 lines for the user.
 
 ## Step 2: Research Claude Code updates
 

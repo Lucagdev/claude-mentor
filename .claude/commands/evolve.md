@@ -1,6 +1,6 @@
 IMPORTANT: Always use proper Portuguese (Brasil) accents in all responses (é, ã, ç, ô, etc.). Never write "voce", "nao", "ja" — always "você", "não", "já".
 
-Read `.claude-mentor-state.json`. Check the `completedLessons` array.
+Read `.claude-code-iniciantes-state.json`. Check the `completedLessons` array.
 
 ## If lessons 1 and 2 are NOT both completed:
 

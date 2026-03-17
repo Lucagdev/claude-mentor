@@ -10,7 +10,7 @@ Wait for the response. Only proceed if the user explicitly confirms (accepts "si
 
 Execute the following steps in order:
 
-1. Delete `.claude-mentor-state.json` if it exists
+1. Delete `.claude-code-iniciantes-state.json` if it exists
 2. Check if `lessons/original-claude.md` exists. If yes, copy its contents back to `CLAUDE.md`, replacing whatever is there now
 3. Remove any commands in `.claude/commands/` that are NOT part of the original four (`start.md`, `learn.md`, `evolve.md`, `reset.md`) — these would be user-created commands from the `/evolve` phase
 4. Remove any files in `.claude/skills/` that were created during the `/evolve` phase (if a `skills/` directory exists and has files not present in the original project)

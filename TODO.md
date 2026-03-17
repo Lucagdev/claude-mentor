@@ -1,4 +1,4 @@
-# Claude Mentor — Melhorias Mapeadas
+# Claude Code para Iniciantes — Melhorias Mapeadas
 
 ## Bugs / Ajustes Urgentes
 
