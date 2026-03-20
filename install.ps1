@@ -195,12 +195,15 @@ if (Test-Path (Join-Path $TargetDir ".git")) {
     Write-Tip "Estou copiando o projeto de lá pro seu computador."
     Write-Host ""
 
-    git clone $RepoUrl $TargetDir 2>&1 | Out-Null
+    $cloneOutput = git clone $RepoUrl $TargetDir 2>&1
     if ($LASTEXITCODE -eq 0) {
         Write-Ok "Projeto baixado com sucesso!"
         Write-Vocab "git clone = copiar um projeto do GitHub pro seu computador."
     } else {
-        Write-Warn "Não consegui baixar do GitHub. Criando pasta vazia."
+        Write-Warn "Não consegui baixar do GitHub."
+        Write-Tip "$cloneOutput"
+        Write-Host ""
+        Write-Tip "Criando pasta vazia..."
         New-Item -ItemType Directory -Path $TargetDir -Force | Out-Null
     }
 }
