@@ -79,19 +79,35 @@ if (Get-Command git -ErrorAction SilentlyContinue) {
     Write-Tip "como um 'ctrl+z' infinito que nunca esquece nada."
     Write-Vocab "git = sistema de controle de versão."
     Write-Host ""
-    Write-Info "Tentando instalar git via winget..."
+    Write-Info "Baixando e instalando o git..."
+    Write-Tip "Buscando a versão mais recente..."
+    Write-Host ""
 
     $gitInstalled = $false
-    $ErrorActionPreference = "Continue"
-    $wingetOutput = winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements 2>&1
-    $ErrorActionPreference = "Stop"
 
-    if ($LASTEXITCODE -eq 0) {
-        $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-        if (Get-Command git -ErrorAction SilentlyContinue) {
-            $gitInstalled = $true
-            Write-Ok "git instalado com sucesso!"
+    try {
+        # Get latest Git for Windows release from GitHub API
+        $release = Invoke-RestMethod "https://api.github.com/repos/git-for-windows/git/releases/latest"
+        $asset = $release.assets | Where-Object { $_.name -match 'Git-.*-64-bit\.exe$' } | Select-Object -First 1
+
+        if ($asset) {
+            $installerPath = "$env:TEMP\git-installer.exe"
+            Write-Tip "Baixando $($asset.name)..."
+            Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $installerPath
+
+            Write-Tip "Instalando... (isso pode levar um minuto)"
+            Start-Process -FilePath $installerPath -ArgumentList '/VERYSILENT','/NORESTART' -Wait
+
+            $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+            if (Get-Command git -ErrorAction SilentlyContinue) {
+                $gitInstalled = $true
+                Write-Ok "git instalado com sucesso!"
+            }
+
+            Remove-Item $installerPath -ErrorAction SilentlyContinue
         }
+    } catch {
+        # Download or install failed
     }
 
     if (-not $gitInstalled) {
