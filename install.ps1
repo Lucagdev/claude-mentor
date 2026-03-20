@@ -195,7 +195,9 @@ if (Test-Path (Join-Path $TargetDir ".git")) {
     Write-Tip "Estou copiando o projeto de lá pro seu computador."
     Write-Host ""
 
+    $ErrorActionPreference = "Continue"
     $cloneOutput = git clone $RepoUrl $TargetDir 2>&1
+    $ErrorActionPreference = "Stop"
     if ($LASTEXITCODE -eq 0) {
         Write-Ok "Projeto baixado com sucesso!"
         Write-Vocab "git clone = copiar um projeto do GitHub pro seu computador."
