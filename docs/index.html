@@ -530,10 +530,10 @@
               </div>
               <div class="terminal-body">
                 <span class="terminal-prompt">$</span>
-                <code class="terminal-cmd">curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh | bash</code>
+                <code class="terminal-cmd">bash &lt;(curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh)</code>
               </div>
               <div class="terminal-actions">
-                <button class="copy-btn" onclick="copyText(this, 'curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh | bash')">Copiar</button>
+                <button class="copy-btn" onclick="copyText(this, 'bash <(curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh)')">Copiar</button>
               </div>
             </div>
             <div class="terminal">
@@ -543,10 +543,10 @@
               </div>
               <div class="terminal-body">
                 <span class="terminal-prompt">PS&gt;</span>
-                <code class="terminal-cmd">irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1 | iex</code>
+                <code class="terminal-cmd">& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1)))</code>
               </div>
               <div class="terminal-actions">
-                <button class="copy-btn" onclick="copyText(this, 'irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1 | iex')">Copiar</button>
+                <button class="copy-btn" onclick="copyText(this, '& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1)))')">Copiar</button>
               </div>
             </div>
           </div>
@@ -615,9 +615,9 @@
 
     var os = detectOS();
     var commands = {
-      windows: 'irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1 | iex',
-      macos: 'curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh | bash',
-      linux: 'curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh | bash'
+      windows: '& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1)))',
+      macos: 'bash <(curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh)',
+      linux: 'bash <(curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh)'
     };
     var osLabels = { windows: 'windows powershell', macos: 'macos terminal', linux: 'linux terminal' };
     var prompts = { windows: 'PS>', macos: '$', linux: '$' };

@@ -15,14 +15,14 @@ Um projeto open-source onde o Claude Code se transforma em mentor interativo: te
 
 Abra o terminal e cole o comando do seu sistema:
 
-**Linux / macOS:**
+**Linux / macOS / WSL:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh | bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.sh)
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1 | iex
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Lucagdev/claude-code-iniciantes/main/install.ps1)))
 ```
 
 **Único pré-requisito:** [conta Claude](https://claude.com/pricing) — novos usuários ganham **30 dias grátis** do Pro!
